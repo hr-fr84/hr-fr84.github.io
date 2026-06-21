@@ -135,24 +135,17 @@ section{padding:110px 5%;position:relative}
 
 /* Services */
 .services-list{display:flex;flex-direction:column;gap:2.4rem;max-width:980px}
-.service-row{display:grid;grid-template-columns:320px 1fr;gap:2.4rem;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:box-shadow 0.3s,transform 0.3s}
+.service-row{display:grid;grid-template-columns:1fr 320px;gap:0;align-items:stretch;background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:box-shadow 0.3s,transform 0.3s}
 .service-row:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
-.service-row:nth-child(even){grid-template-columns:1fr 320px}
-.service-row:nth-child(even) .service-row-img{order:2}
-.service-row:nth-child(even) .service-row-body{order:1}
 @media(max-width:760px){
-  .service-row,.service-row:nth-child(even){grid-template-columns:1fr}
-  .service-row-img{order:1 !important;aspect-ratio:16/9}
-  .service-row-body{order:0 !important}
-  .service-row:nth-child(even) .service-row-img{order:1 !important}
-  .service-row:nth-child(even) .service-row-body{order:0 !important}
+  .service-row{grid-template-columns:1fr}
 }
-.service-row-img{aspect-ratio:1/1;overflow:hidden;height:100%;min-height:220px}
+.service-row-img{overflow:hidden;min-height:260px}
 .service-row-img img{width:100%;height:100%;object-fit:cover;display:block}
-.service-row-body{padding:2rem 2.2rem 2rem 0}
-.service-row:nth-child(even) .service-row-body{padding:2rem 0 2rem 2.2rem}
+.service-row-body{padding:2rem 2.2rem}
 @media(max-width:760px){
-  .service-row-body,.service-row:nth-child(even) .service-row-body{padding:1.8rem}
+  .service-row-body{padding:1.8rem}
+  .service-row-img{min-height:220px}
 }
 .service-num{font-family:'Oswald',sans-serif;font-size:13px;color:var(--silver);letter-spacing:0.2em;margin-bottom:1rem;font-weight:600}
 .services-list h3{font-size:19px;font-weight:700;color:var(--navy-d);margin-bottom:0.9rem;letter-spacing:0.02em}
@@ -189,8 +182,8 @@ section{padding:110px 5%;position:relative}
 /* Contact */
 .contact{background:var(--surface)}
 .contact-inner{max-width:640px;margin:0 auto}
-.contact-banner{width:100%;aspect-ratio:21/7;border-radius:6px;overflow:hidden;margin-bottom:2.4rem;background:var(--navy-d);display:flex;align-items:center;justify-content:center}
-.contact-banner img{height:60%;width:auto;object-fit:contain;display:block}
+.contact-banner{width:100%;margin-bottom:2.4rem;display:flex;align-items:center;justify-content:center;padding:1rem 0}
+.contact-banner img{height:auto;width:50%;max-width:320px;object-fit:contain;display:block}
 .contact-form{background:var(--white);border:1px solid var(--border);padding:2.6rem;border-radius:6px}
 .form-row{margin-bottom:1.3rem}
 .form-row label{display:block;font-size:13px;font-weight:500;color:var(--navy-d);margin-bottom:6px;letter-spacing:0.02em}
